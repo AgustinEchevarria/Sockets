@@ -25,7 +25,7 @@ Funciones:
         
 Ejemplos:
 
-        from ShadownSocket import *
+        from Communication import *
         host = 'www.google.com'
         ip = SearchIp(host)
         port = 443
