@@ -22,6 +22,7 @@ Funciones:
           
         
 Ejemplos:
+
         from ShadownSocket import *
         host = 'www.google.com'
         ip = SearchIp(host)
