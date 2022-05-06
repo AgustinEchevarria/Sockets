@@ -3,11 +3,7 @@ Manejo de sockets
 
 Requisitos:
             socket, ssl
-            
-Pasos:
-        1_ Importar Communication (from Communication import *)
-        
-        
+                            
 Funciones:
           
           SearchIp(host) # Recive un string "Host" como parametro y retorna un string con el valor de ip;
@@ -34,3 +30,6 @@ Ejemplos:
         data = GetRequests(host,uri='/search',cookie='SESSION: 654sad684a4d6w81ad;',others='\r\nOtherHeader: KEY')
         data_recived = SandRData(data,soc)
         print(data_recive.decode())
+IMPORTANTE:
+            Los timeout de los servidores son distintos a los que especifica, se pueden generar errores si no automatiza la libreria.
+            ej: Cifrate(soc,host) debe ser llamado muy rapidamente luego de crear el socket o el servidor no cifrara la conexion devolviendo un error
