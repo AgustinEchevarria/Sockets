@@ -1,5 +1,5 @@
 import socket, ssl 
-def GeneratePost(data,host,uri,content_type='',user_agent='',cookie='',others=''):
+def PostRequests(data,host,uri,content_type='',user_agent='',cookie='',others=''):
     content_length = len(data)
     if content_type == '':
         content_type = 'application/x-www-form-urlencoded;charset=UTF-8'
@@ -34,10 +34,6 @@ def Cifrate(soc,host):
     context = ssl._create_unverified_context()
     soc = context.wrap_socket(soc,server_hostname=str(host))
     return soc
-
-def Showdatarecived():
-    x = open('recivedcache.rslt','r').read()
-    print(x)
     
 def SandRData(datas,_socketname_,time=3):
     cache = open('recivedcache.rslt','wb')
@@ -74,7 +70,7 @@ def SandRData(datas,_socketname_,time=3):
     for i in range(0,len(dtrlist)):
         o = o + dtrlist[i]
     return o
-def HttpRequests(host,location='/',cookie='',others=''):#others='\r\nExample-Header: Key'
+def GetRequests(host,location='/',cookie='',others=''):#others='\r\nExample-Header: Key'
     version = 'HTTP/1.1'
     useragent = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537 Chrome/91.0.4472.11 Safari/537.36'
     datas = str('GET' + ' ' + location + ' ' + version + '\r\nHost: ' + host + '\r\nUser-Agent: ' + useragent + '\r\nAccept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9\r\nConnection: Keep-Alive\r\n')
