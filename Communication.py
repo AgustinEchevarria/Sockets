@@ -31,9 +31,13 @@ def CreateTcpIpv4Sock(ip,port,adrr='127.0.0.1',t=10,portr=8080):
     return soc
 
 def Cifrate(soc,host):
-    context = ssl._create_unverified_context()
-    soc = context.wrap_socket(soc,server_hostname=str(host))
-    return soc
+    while True:
+        try:
+            context = ssl._create_unverified_context()
+            soc = context.wrap_socket(soc,server_hostname=str(host))
+            return soc
+        except:
+            continue
     
 def SandRData(datas,_socketname_,time=3):
     cache = open('recivedcache.rslt','wb')
