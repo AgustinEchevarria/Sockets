@@ -3,8 +3,10 @@ Manejo de sockets
 
 Requisitos:
             socket, ssl
+            
 Pasos:
-        1_ Importar ShadownSocket (from ShadownSocket import *)
+        1_ Importar Communication (from Communication import *)
+        
         
 Funciones:
           
